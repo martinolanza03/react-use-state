@@ -7,7 +7,7 @@ export default function AccordionList() {
     const [active, setActive] = useState(null);
 
     return (<div >
-        <div className="container d-flex flex-row gap-3 m-5">
+        <div className="container d-flex flex-row gap-3 mb-5 mt-5">
             {languages.map(language => {
                 return <>
                     <AccordionItem key={language.id} title={language.title} actived={active === language.id} onToggle={() => setActive(active === language.id ? null : language.id)} />
