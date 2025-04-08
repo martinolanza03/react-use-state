@@ -8,7 +8,7 @@ export default function AccordionList() {
     return (<>
         {languages.map(language => {
             return <>
-                <AccordionItem key={language.id} languages={language} actived={active === language.id} onToggle={() => setActive(language.id)} />
+                <AccordionItem key={language.id} languages={language} actived={active === language.id} onToggle={() => setActive(active === language.id ? null : language.id)} />
             </>
         })}
     </>)
