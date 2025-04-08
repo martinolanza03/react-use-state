@@ -6,16 +6,16 @@ import { useState } from "react";
 export default function AccordionList() {
     const [active, setActive] = useState(null);
 
-    return (<div className="container d-flex flex-row gap-3">
-
-        {languages.map(language => {
-            return <>
-                <AccordionItem key={language.id} title={language.title} actived={active === language.id} onToggle={() => setActive(active === language.id ? null : language.id)} />
-            </>
-        }
-        )}
-
-        <div>
+    return (<div >
+        <div className="container d-flex flex-row gap-3 m-5">
+            {languages.map(language => {
+                return <>
+                    <AccordionItem key={language.id} title={language.title} actived={active === language.id} onToggle={() => setActive(active === language.id ? null : language.id)} />
+                </>
+            }
+            )}
+        </div>
+        <div className="container card">
             <AccordionDescription languages={languages} actived={active} />
         </div>
     </div>)
