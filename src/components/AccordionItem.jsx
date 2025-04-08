@@ -1,6 +1,12 @@
-export default function AccordionItem({ languages }) {
+export default function AccordionItem({ languages, actived, onToggle }) {
     return (<>
-        {languages.map(language => <button>{language.title}</button>)}
+        <button onClick={onToggle}>{languages.title}</button>
+        {actived && <>
+            <p>{languages.title}</p>
+            <p>{languages.description}</p>
+        </>
+        }
 
-    </>)
+    </>
+    );
 }
